@@ -1,9 +1,13 @@
-<script>
+<script setup>
 import { ref } from 'vue'
 
+const supabase = useSupabaseClient()
+const user = useSupabaseUser()
 
-
-
+async function signOut() {
+  const {data, error } = await supabase.auth.signOut()
+  window.location.href = '/'
+}
 
 </script>
 
@@ -34,7 +38,7 @@ import { ref } from 'vue'
     >
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-            <nuxt-link to="/">Home</nuxt-link>
+            <nuxt-link to="/home">Home</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/calendar">Calendar</nuxt-link>
@@ -44,6 +48,14 @@ import { ref } from 'vue'
         </li>
         <li>
             <nuxt-link to="/profile">Profile</nuxt-link>
+        </li>
+        <li>
+          <div>
+            {{ user?.email  }}
+          </div>
+        </li>
+        <li>
+            <button class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="signOut">Sign Out</button>
         </li>
       </ul>
     </div>
