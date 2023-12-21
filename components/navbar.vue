@@ -50,8 +50,11 @@ async function signOut() {
             <nuxt-link to="/profile">Profile</nuxt-link>
         </li>
         <li>
-          <div>
-            {{ user?.email  }}
+          <div v-if="user">
+            Welcome back {{ user?.email  }}
+          </div>
+          <div v-else>
+            <nuxt-link to="/"></nuxt-link>
           </div>
         </li>
         <li>
