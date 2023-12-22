@@ -19,7 +19,7 @@ async function getDiaries() {
   if (newDiary.value !== '') {
     const { data, error } = await supabase
       .from('Diary_Entries')
-      .insert([{ message: newDiary.value }])
+      .insert([{ message: newDiary.value, user_id: user?.value?.id }])
       .single()
 
     if (error) {

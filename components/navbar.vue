@@ -3,11 +3,14 @@ import { ref } from 'vue'
 
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
+let navBarHidden = ref(true)
 
 async function signOut() {
-  const {data, error } = await supabase.auth.signOut()
+  const { data, error } = await supabase.auth.signOut({
+  })
   window.location.href = '/'
 }
+console.log(user.value)
 
 </script>
 
@@ -20,7 +23,7 @@ async function signOut() {
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
  
-        <button
+        <button @click="() => navBarHidden = !navBarHidden"
       data-collapse-toggle="navbar-sticky"
       type="button"
       class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -32,8 +35,8 @@ async function signOut() {
           </svg>
       </button>
     </div>
-    <div
-      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+    <div v-show="!navBarHidden" 
+      class="items-center justify-between w-full md:flex md:w-auto md:order-1"
       id="navbar-sticky"
     >
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -57,8 +60,13 @@ async function signOut() {
             <nuxt-link to="/"></nuxt-link>
           </div>
         </li>
-        <li>
+        <li v-if="user">
             <button class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="signOut">Sign Out</button>
+        </li>
+        <li>
+          <div v-if="!user">
+            <nuxt-link to="/">Login</nuxt-link>
+          </div>
         </li>
       </ul>
     </div>

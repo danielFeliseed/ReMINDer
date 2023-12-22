@@ -8,7 +8,7 @@ let email = ref('')
 let password = ref('')
 
 const { data } = await supabase
-  .from('users')
+  .from('user')
   .select('email, password')
   .eq('id', user?.value?.id)
   .single()
@@ -21,26 +21,12 @@ if (data) {
 loading.value = false
 
 async function updateProfile() {
-  try {
-    loading.value = true
-    
-
-    const updates = {
-      id: user?.value?.id,
-      email: email.value,
-      password: password.value,
-    }
-
-    const { error } = await supabase.from('users').upsert(updates, {
-      returning: 'minimal', // Don't return the value after inserting
-    })
-    if (error) throw error
-  } catch (error) {
-    alert(error.message)
-  } finally {
-    loading.value = false
-  }
+ const { data, error } = await supabase.auth.updateUser({
+   email: email.value,
+   password: password.value
+ })
 }
+console.log(user)
 </script>
 
 <template>
