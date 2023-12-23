@@ -117,7 +117,7 @@ console.log(diaries.value)
 <template>
   <transition name="fade">
     <div v-show="!toastHidden" id="toast-danger" position="sticky"
-      class="fixed top-5 right-1 mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+      class="fixed mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
       role="alert">
       <div
         class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
@@ -143,7 +143,7 @@ console.log(diaries.value)
 
   <transition name="fade">
     <div v-show="!editedToastHidden" id="toast-danger" position="sticky"
-      class="fixed top-5 right-1 mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+      class="fixed mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
       role="alert">
       <div
         class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
@@ -170,7 +170,7 @@ console.log(diaries.value)
   <div class="app-container flex flex-col items-center min-h-screen">
 
     <div class="calendar-container">
-      <h1 class="title font-bold text-2xl text-blue-700 mb-3">Look back at previous entries</h1>
+      <h1 class="title font-bold text-2xl text-blue-700 mb-3 text-center">Look back at previous entries</h1>
     
 
     <VDatePicker class="date-picker" style="height: 300px; width: 350px;" value="selectedDate" @update:modelValue="onDateSelect"
@@ -283,8 +283,11 @@ console.log(diaries.value)
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #f0f0f0;
+  background: #ffffff;
   padding: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  width: 90%;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -298,6 +301,7 @@ console.log(diaries.value)
 
 .date-picker {
   margin-top: 1rem;
+
 }
 
 .button {
