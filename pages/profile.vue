@@ -36,7 +36,7 @@ console.log(user)
 
             </div>
             <div class="container">
-            <h1 class="text-2xl font-bold mb-10 text-black whitespace-nowrap">You can change your login information below</h1>
+            <h1 class="text-2xl font-bold mb-10 text-black text-center">You can change your login information below</h1>
             <div class="mb-6">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current Email
                     address</label>
