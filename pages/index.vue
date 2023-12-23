@@ -45,7 +45,7 @@ async function signOut() {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center space-y-4 mt-[200px]">
+  <div class="app-container flex flex-col items-center justify-center space-y-4">
 
   
 
@@ -67,14 +67,14 @@ async function signOut() {
                 </div>
                 <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
             </div>
-            <a href="#" class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+            <a href="#" class="ms-auto text-sm text-blue-700 hover:underline text-green-400 font-bold">Lost Password?</a>
         </div>
         <nuxt-link href="#" @click="signIn">
         <button type="submit"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Submit</button>
+          class="button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Submit</button>
       </nuxt-link>
         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Not registered? <a href="/signUp" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+            Not registered? <a href="/signUp" class="text-green-400 font-bold hover:underline dark:text-blue-500">Create account</a>
         </div>
     </form>
 </div>
@@ -91,4 +91,28 @@ async function signOut() {
 
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #84fab0;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #8fd3f4;
+  }
+}
+</style>

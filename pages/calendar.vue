@@ -55,13 +55,13 @@ async function updateDiary() {
       .from('Diary_Entries')
       .update({ message: editedDiary?.message })
       .eq("id", editedDiary.id) // Maybe?
-      console.log(error)
-    
-      getDiaries()
-      editedToastHidden.value = !editedToastHidden.value
-      modalHidden.value = true
-      currentEditingId.value = null
-    
+    console.log(error)
+
+    getDiaries()
+    editedToastHidden.value = !editedToastHidden.value
+    modalHidden.value = true
+    currentEditingId.value = null
+
   }
 }
 
@@ -115,46 +115,67 @@ console.log(diaries.value)
 </script>
 
 <template>
-  <div v-show="!toastHidden" id="toast-danger" position="sticky" class="fixed top-5 right-1 mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"/>
+  <transition name="fade">
+    <div v-show="!toastHidden" id="toast-danger" position="sticky"
+      class="fixed top-5 right-1 mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+      role="alert">
+      <div
+        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+          viewBox="0 0 20 20">
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
         </svg>
         <span class="sr-only">Error icon</span>
-    </div>
-    <div class="ms-3 text-sm font-normal">Diary has been deleted.</div>
-    <button @click="() => toastHidden = !toastHidden" type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-danger" aria-label="Close">
+      </div>
+      <div class="ms-3 text-sm font-normal">Diary has been deleted.</div>
+      <button @click="() => toastHidden = !toastHidden" type="button"
+        class="button ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+        data-dismiss-target="#toast-danger" aria-label="Close">
         <span class="sr-only">Close</span>
         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
         </svg>
-    </button>
-</div>
+      </button>
+    </div>
+  </transition>
 
-<div v-show="!editedToastHidden" id="toast-danger" position="sticky" class="fixed top-5 right-1 mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-  <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+  <transition name="fade">
+    <div v-show="!editedToastHidden" id="toast-danger" position="sticky"
+      class="fixed top-5 right-1 mt-[60px] flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+      role="alert">
+      <div
+        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+          viewBox="0 0 20 20">
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
         </svg>
         <span class="sr-only">Check icon</span>
-    </div>
-    <div class="ms-3 text-sm font-normal">Diary has been updated.</div>
-    <button @click="() => editedToastHidden = !editedToastHidden" type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-danger" aria-label="Close">
+      </div>
+      <div class="ms-3 text-sm font-normal">Diary has been updated.</div>
+      <button @click="() => editedToastHidden = !editedToastHidden" type="button"
+        class="button ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+        data-dismiss-target="#toast-danger" aria-label="Close">
         <span class="sr-only">Close</span>
         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
         </svg>
-    </button>
-</div>
-
-  <div class="flex flex-col items-center mt-[150px] min-h-screen">
-    
-    <div>
-      <h1 class="font-bold text-2xl text-blue-700 shadow-sm mb-3">Look back at previous entries</h1>
+      </button>
     </div>
+  </transition>
 
-    <VDatePicker style="height: 300px; width: 350px;" value="selectedDate" @update:modelValue="onDateSelect"
+  <div class="app-container flex flex-col items-center min-h-screen">
+
+    <div class="calendar-container">
+      <h1 class="title font-bold text-2xl text-blue-700 mb-3">Look back at previous entries</h1>
+    
+
+    <VDatePicker class="date-picker" style="height: 300px; width: 350px;" value="selectedDate" @update:modelValue="onDateSelect"
       :attributes="attrs" />
+    </div>
     <div class="flex items-start gap-2.5 mt-2" v-for="(diary, index) in diaries">
       <div class="flex">
         <div
@@ -169,7 +190,7 @@ console.log(diaries.value)
 
         <button @click="toggleDropdown(index)" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
           data-dropdown-placement="bottom-start"
-          class="flex-shrink-0 inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
+          class="button flex-shrink-0 inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
           type="button">
           <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
             fill="currentColor" viewBox="0 0 4 15">
@@ -185,14 +206,14 @@ console.log(diaries.value)
           <li>
             <button @click="openModal(diary)">
               <a href="#" data-modal-target="default-modal" data-modal-toggle="default-modal"
-                class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                class="button block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
             </button>
           </li>
 
           <li>
             <button @click="deleteDiary(diary.id)">
               <a href="#"
-                class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+                class="button block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
             </button>
           </li>
         </ul>
@@ -221,7 +242,7 @@ console.log(diaries.value)
 
           <div class="p-4 md:p-5 space-y-4">
 
-            <div  class="flex flex-col">
+            <div class="flex flex-col">
               <label for="message" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
               <textarea v-model="editedDiary.message" id="message" name="message" rows="3"
                 class="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:border-blue-500 focus:bg-white focus:ring-0 dark:bg-gray-700 dark:border-gray-600 dark:focus:bg-gray-900 dark:focus:border-gray-600 dark:focus:ring-gray-600"></textarea>
@@ -231,19 +252,77 @@ console.log(diaries.value)
 
           <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
             <button @click="updateDiary" data-modal-hide="default-modal" type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Save changes</button>
-            <button @click="() => modalHidden = !modalHidden" data-modal-hide="default-modal" type="button"
-              class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-              Cancel</button>
-          </div>
+              class="button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Save changes</button>
+          <button @click="() => modalHidden = !modalHidden" data-modal-hide="default-modal" type="button"
+            class="button ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+            Cancel</button>
         </div>
-
       </div>
 
     </div>
 
   </div>
-</template>
 
-<style lang="scss" scoped></style>
+</div></template>
+
+<style lang="scss" scoped>
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.calendar-container {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.date-picker {
+  margin-top: 1rem;
+}
+
+.button {
+  padding: 0.3rem 0.3rem;
+  margin-left: 0.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #84fab0;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #8fd3f4;
+  }
+}
+
+.label {
+  font-size: 1.5rem;
+  color: #333;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>

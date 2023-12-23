@@ -19,7 +19,7 @@ console.log(user.value)
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ReMINDer</span>
+        <span class="header-text self-center text-2xl font-semibold whitespace-nowrap ">ReMINDer</span>
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
  
@@ -72,7 +72,7 @@ console.log(user.value)
           </div>
         </li>
         <li v-if="user">
-            <button class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="signOut">Sign Out</button>
+            <button class="button bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="signOut">Sign Out</button>
         </li>
         <li>
           <div v-if="!user">
@@ -91,5 +91,29 @@ console.log(user.value)
   .hidden.md\:flex {
     display: flex !important;
   }
+}
+
+.button {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #84fab0;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #8fd3f4;
+  }
+}
+
+.header-text {
+  color: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.025em;
+  line-height: 1.5;
+  
 }
 </style>

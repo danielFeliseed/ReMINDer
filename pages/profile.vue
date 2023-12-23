@@ -30,12 +30,13 @@ console.log(user)
 </script>
 
 <template>
-    <div class="flex justify-center">
+    <div class="app-container flex justify-center">
         <form class="w-3/4">
-            <div class="grid gap-6 mb-6 md:grid-cols-2 mt-[120px]">
+            <div class="mt-[150px] grid gap-6 mb-6 md:grid-cols-2">
 
             </div>
-            <h1 class="text-2xl mb-10">You can change your login information below</h1>
+            <div class="container">
+            <h1 class="text-2xl font-bold mb-10 text-black whitespace-nowrap">You can change your login information below</h1>
             <div class="mb-6">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current Email
                     address</label>
@@ -50,14 +51,16 @@ console.log(user)
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Password" required>
             </div>
+        
 
             <div class="flex justify-center">
                 
 
                 <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     @click.prevent="updateProfile"
                     >Save</button>
+                </div>
             </div>
         </form>
     </div>
@@ -67,4 +70,37 @@ console.log(user)
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+.app-container {
+
+ 
+  height: 100vh;
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #84fab0;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #8fd3f4;
+  }
+}
+</style>
