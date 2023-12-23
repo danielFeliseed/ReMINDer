@@ -42,7 +42,7 @@ async function addDiary() {
   <div class="app-container flex flex-col items-center justify-center space-y-4">
     <transition name="fade">
       <div v-show="!toastHidden" id="toast-success"
-        class="toast mt-[60px] fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+        class="toast mt-[90px] fixed flex justify-center items-center w-3/5 max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
         role="alert">
         <div
           class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
@@ -53,7 +53,7 @@ async function addDiary() {
           </svg>
           <span class="sr-only">Check icon</span>
         </div>
-        <div class="ms-3 text-sm font-normal">Item moved successfully.</div>
+        <div class="ms-3 text-sm font-normal">Diary added</div>
         <button @click="() => toastHidden = !toastHidden" type="button"
           class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
           data-dismiss-target="#toast-success" aria-label="Close">
