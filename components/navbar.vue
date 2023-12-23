@@ -38,17 +38,29 @@ console.log(user.value)
     <div :class="{ 'hidden md:flex': navBarHidden }" class="items-center justify-between w-full md:w-auto md:order-1"
       id="navbar-sticky"
     >
-      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
+      <ul class="flex flex-col gap-5 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li v-if="!user">
+          <nuxt-link to="/">Home</nuxt-link>
+        </li>
+        <li v-if="user">
             <nuxt-link to="/home">Home</nuxt-link>
         </li>
-        <li>
+        <li v-if="!user">
+            <nuxt-link to="/">Calendar</nuxt-link>
+        </li>
+        <li v-if="user">
           <nuxt-link to="/calendar">Calendar</nuxt-link>
         </li>
-        <li>
-            <nuxt-link to="/support">Support</nuxt-link>
+        <li v-if="!user">
+            <nuxt-link to="/">Help</nuxt-link>
         </li>
-        <li>
+        <li v-if="user">
+            <nuxt-link to="/support">Help</nuxt-link>
+        </li>
+        <li v-if="!user">
+            <nuxt-link to="/">Profile</nuxt-link>
+        </li>
+        <li v-if="user">
             <nuxt-link to="/profile">Profile</nuxt-link>
         </li>
         <li>

@@ -14,7 +14,12 @@ async function signIn() {
     email: email.value,
     password: password.value
   })
+  if (!user.value) {
+    window.location.href = '/'
+    alert('User does not exist, please sign up')
+  } else {
   window.location.href = '/home'
+  }
 }
 
 

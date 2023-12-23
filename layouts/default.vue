@@ -9,18 +9,6 @@
 import Navbar from '@/components/navbar.vue'
 
 
-
- let fruits = [
-  { name: 'Apple', color: 'red' },
-  { name: 'Banana', color: 'yellow' },
-  { name: 'Grape', color: 'purple' },
-  { name: 'Kiwi', color: 'green' },
-  { name: 'Orange', color: 'orange' },
-  { name: 'Strawberry', color: 'red' },
-  { name: 'Watermelon', color: 'green' },
-]
-
-
 </script>
 
 <style lang="scss" scoped>

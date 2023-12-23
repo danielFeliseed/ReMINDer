@@ -35,8 +35,9 @@ console.log(user)
             <div class="grid gap-6 mb-6 md:grid-cols-2 mt-[120px]">
 
             </div>
+            <h1 class="text-2xl mb-10">You can change your login information below</h1>
             <div class="mb-6">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current Email
                     address</label>
                 <input type="email" id="email" v-model="email"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -44,10 +45,10 @@ console.log(user)
             </div>
 
             <div class="mb-6">
-                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                <input type="password" id="password" v-model="password"
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current Password</label>
+                <input type="" id="password" v-model="password"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="•••••••••" required>
+                    placeholder="Password" required>
             </div>
 
             <div class="flex justify-center">
