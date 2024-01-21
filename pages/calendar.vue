@@ -279,7 +279,7 @@ console.log(diaries.value)
 
 .calendar-container {
   display: flex;
-  position:absolute;
+  position: relative;
   margin-top: 150px;
   flex-direction: column;
   align-items: center;
