@@ -22,9 +22,11 @@ async function signIn() {
   }
 }
 
+async function resetPassword() {
 const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
   redirectTo: 'https://nuxt-diary.vercel.app/profile',
 })
+}
 
 
 
@@ -71,7 +73,7 @@ async function signOut() {
                 </div>
                 <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
             </div>
-            <a href="#" class="ms-auto text-sm text-blue-700 hover:underline text-green-400 font-bold">Lost Password?</a>
+            <button href="#" @click="resetPassword" class="ms-auto text-sm text-blue-700 hover:underline text-green-400 font-bold">Forgot Password?</button>
         </div>
         <nuxt-link href="#" @click="signIn">
         <button type="submit"
