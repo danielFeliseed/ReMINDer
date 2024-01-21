@@ -187,7 +187,6 @@ console.log(diaries.value)
           <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">{{ diary?.message }}</p>
         </div>
 
-
         <button @click="toggleDropdown(index)" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
           data-dropdown-placement="bottom-start"
           class=" flex-shrink-0 inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
@@ -201,7 +200,7 @@ console.log(diaries.value)
       </div>
 
       <div v-show="showAria[index]" id="dropdownDots"
-        class="z-10 bg-gray-100 divide-y divide-gray-100 rounded-lg shadow w-30 dark:bg-gray-700 dark:divide-gray-600">
+        class=" z-10  bg-gray-100 divide-y divide-gray-100 rounded-lg shadow w-30 dark:bg-gray-700 dark:divide-gray-600">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
           <li>
             <button @click="openModal(diary)">
@@ -252,10 +251,10 @@ console.log(diaries.value)
 
           <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
             <button @click="updateDiary" data-modal-hide="default-modal" type="button"
-              class="button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg whitespace-nowrap text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Save changes</button>
           <button @click="() => modalHidden = !modalHidden" data-modal-hide="default-modal" type="button"
-            class="button ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+            class=" ms-3 text-white bg-blue-700 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border whitespace-nowrap border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
             Cancel</button>
         </div>
       </div>
