@@ -43,28 +43,29 @@ console.log(user.value)
     >
       <ul class="flex flex-col gap-5 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li v-if="!user">
-          <nuxt-link to="/">Home</nuxt-link>
+          <nuxt-link to="/" @click="navBarHidden = true">Home</nuxt-link>
         </li>
         <li v-if="user">
-            <nuxt-link to="/home">Home</nuxt-link>
+            <nuxt-link to="/home" @click="navBarHidden = true">Home</nuxt-link>
+            
         </li>
         <li v-if="!user">
-            <nuxt-link to="/">Calendar</nuxt-link>
+            <nuxt-link to="/" @click="navBarHidden = true">Calendar</nuxt-link>
         </li>
         <li v-if="user">
-          <nuxt-link to="/calendar">Calendar</nuxt-link>
+          <nuxt-link to="/calendar" @click="navBarHidden = true">Calendar</nuxt-link>
         </li>
         <li v-if="!user">
-            <nuxt-link to="/">Help</nuxt-link>
+            <nuxt-link to="/" @click="navBarHidden = true">Help</nuxt-link>
         </li>
         <li v-if="user">
-            <nuxt-link to="/support">Help</nuxt-link>
+            <nuxt-link to="/support" @click="navBarHidden = true">Help</nuxt-link>
         </li>
         <li v-if="!user">
-            <nuxt-link to="/">Profile</nuxt-link>
+            <nuxt-link to="/" @click="navBarHidden = true">Profile</nuxt-link>
         </li>
         <li v-if="user">
-            <nuxt-link to="/profile">Profile</nuxt-link>
+            <nuxt-link to="/profile" @click="navBarHidden = true">Profile</nuxt-link>
         </li>
         <li>
           <div v-if="user">
@@ -79,7 +80,7 @@ console.log(user.value)
         </li>
         <li>
           <div v-if="!user">
-            <nuxt-link to="/">Login</nuxt-link>
+            <nuxt-link to="/" @click="navBarHidden = true">Login</nuxt-link>
           </div>
         </li>
       </ul>
@@ -100,13 +101,13 @@ console.log(user.value)
   padding: 0.5rem 0.8rem;
   border: none;
   border-radius: 0.5rem;
-  background: #84fab0;
+  background: #1c39dd;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #8fd3f4;
+    background: #101010;
   }
 }
 

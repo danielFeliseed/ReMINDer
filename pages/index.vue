@@ -82,14 +82,14 @@ async function signOut() {
                 </div>
                 <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
             </div>
-            <button href="#" @click="resetPassword" class="ms-auto text-sm text-blue-700 hover:underline text-green-400 font-bold">Forgot Password?</button>
+            <button href="#" @click="resetPassword" class="ms-auto text-sm text-blue-700 hover:underline font-bold">Forgot Password?</button>
         </div>
         <nuxt-link href="#" @click="signIn">
         <button type="submit"
           class="button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Submit</button>
       </nuxt-link>
         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Not registered? <a href="/signUp" class="text-green-400 font-bold hover:underline dark:text-blue-500">Create account</a>
+            Not registered? <a href="/signUp" class="text-blue-700 font-bold hover:underline dark:text-blue-500">Create account</a>
         </div>
     </form>
 </div>
@@ -114,20 +114,20 @@ async function signOut() {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #feffff 100%);
 }
 
 .button {
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
-  background: #84fab0;
+  background: #1c39dd;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #8fd3f4;
+    background: #060606;
   }
 }
 </style>

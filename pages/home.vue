@@ -115,7 +115,7 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-2.px-4.rounded {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background: linear-gradient(120deg, #fffefe 0%, #fcfeff 100%);
 }
 
 .toast {
@@ -136,7 +136,7 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-2.px-4.rounded {
   padding: 2rem;
   background: white;
   border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .label {
@@ -157,13 +157,13 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-2.px-4.rounded {
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
-  background: #84fab0;
+  background: #1c39dd;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #8fd3f4;
+    background: #060606;
   }
 }
 

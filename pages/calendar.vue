@@ -179,7 +179,7 @@ console.log(diaries.value)
     <div class="flex items-start gap-2.5 mt-2" v-for="(diary, index) in diaries">
       <div class="flex">
         <div
-          class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700 ml-7">
+          class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-white rounded-e-xl rounded-es-xl dark:bg-gray-700 shadow-xl ml-7">
           <div class="flex items-center space-x-2 rtl:space-x-reverse">
             <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{ new
               Date(diary?.created_at).toLocaleDateString() }}</span>
@@ -190,7 +190,7 @@ console.log(diaries.value)
 
         <button @click="toggleDropdown(index)" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
           data-dropdown-placement="bottom-start"
-          class="button flex-shrink-0 inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
+          class=" flex-shrink-0 inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
           type="button">
           <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
             fill="currentColor" viewBox="0 0 4 15">
@@ -201,19 +201,19 @@ console.log(diaries.value)
       </div>
 
       <div v-show="showAria[index]" id="dropdownDots"
-        class="z-10 bg-gray-100 divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600">
+        class="z-10 bg-gray-100 divide-y divide-gray-100 rounded-lg shadow w-30 dark:bg-gray-700 dark:divide-gray-600">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
           <li>
             <button @click="openModal(diary)">
               <a href="#" data-modal-target="default-modal" data-modal-toggle="default-modal"
-                class="button block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                class=" block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
             </button>
           </li>
 
           <li>
             <button @click="deleteDiary(diary.id)">
               <a href="#"
-                class="button block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+                class=" block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
             </button>
           </li>
         </ul>
@@ -274,7 +274,7 @@ console.log(diaries.value)
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #ffffff 100%);
 }
 
 .calendar-container {
@@ -289,7 +289,7 @@ console.log(diaries.value)
   margin-left: 2rem;
   width: 90%;
   border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -309,19 +309,19 @@ console.log(diaries.value)
   margin-left: 0.3rem;
   border: none;
   border-radius: 0.5rem;
-  background: #84fab0;
-  color: white;
+  background: #1c39dd;
+  color: rgb(255, 255, 255);
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #8fd3f4;
+    background: #0c0c0c;
   }
 }
 
 .label {
   font-size: 1.5rem;
-  color: #333;
+  color: #080808;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;

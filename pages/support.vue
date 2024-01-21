@@ -8,11 +8,11 @@ function toggleModal() {
 }
 </script>
 <template>
-    <section class="bg-gray-50 dark:bg-gray-900">
-    <div class="app-container mt-[50px] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
+<section class="app-container">
+    <div class=" bg-white mt-[50px] py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16 shadow-xl">
         <div class="flex flex-col justify-center">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-white">We care about your feedback</h1>
-            <p class="mb-6 text-lg font-normal text-white lg:text-xl dark:text-gray-400">Here at ReMINDer we are striving to make our service as simple and easy to use for our users. Please contact us if you notice any issues with anything and we will fix it as soon as possible.</p>
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-white">We care about your feedback</h1>
+            <p class="mb-6 text-lg font-normal text-black lg:text-xl dark:text-gray-400">Here at ReMINDer we are striving to make our service as simple and easy to use for our users. Please contact us if you notice any issues with anything and we will fix it as soon as possible.</p>
             
 
 <!-- Modal toggle -->
@@ -109,20 +109,20 @@ function toggleModal() {
 .app-container {
 
   height: 100vh;
-  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #fafbfc 100%);
 }
 
 .button {
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
-  background: #84fab0;
+  background: #1c39dd;;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #8fd3f4;
+    background: #030303;
   }
 }
 

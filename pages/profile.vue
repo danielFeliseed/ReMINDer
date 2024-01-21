@@ -104,7 +104,7 @@ console.log(user)
 
  
   height: 100vh;
-  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background: linear-gradient(120deg, #fefefe 0%, #ffffff 100%);
 }
 
 .container {
@@ -112,23 +112,23 @@ console.log(user)
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #f0f0f0;
+  background: #ffffff;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .button {
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
-  background: #84fab0;
+  background: #1c39dd;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #8fd3f4;
+    background: #050505;
   }
 }
 </style>

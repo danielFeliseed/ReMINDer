@@ -16,4 +16,6 @@ import Navbar from '@/components/navbar.vue'
   background-color: #373737;
 }
 
+
+
 </style>
