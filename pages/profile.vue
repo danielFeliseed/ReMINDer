@@ -70,7 +70,7 @@ console.log(user)
 
             </div>
             <div class="container md:w-[700px]">
-            <h1 class="text-2xl font-bold mb-10 text-black text-center">You can change your password below</h1>
+            <h1 class="text-2xl font-bold mb-10 text-black text-center">Account info</h1>
            
 
             <div class="mb-6">
