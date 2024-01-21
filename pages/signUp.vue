@@ -28,6 +28,21 @@ async function signUp() {
   
 }
 
+async function resetPassword() {
+  try{
+const { data, error } = await supabase.auth.resetPasswordForEmail(email.value, {
+  redirectTo: 'https://nuxt-diary.vercel.app/profile'
+})
+if(error) {
+  console.error('Error sending password reset email:', error)
+} else {
+  alert('Password reset email has been sent. Please check your inbox')
+}
+  } catch (e) {
+    console.error('An error occured while resetting password:', e)
+  }
+}
+
 
 // async function magicLink() {
 //   const { data, error } = await supabase.auth.signInWithOtp({
@@ -50,7 +65,7 @@ function signOut() {
   <div class="flex flex-col items-center justify-center space-y-4 mt-[200px]">
 
     <transition name="fade">
-    <div v-show="toastHidden" id="toast-danger" position="sticky"
+    <div v-show="!toastHidden" id="toast-danger" position="sticky"
       class=" flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
       role="alert">
       <div
@@ -93,7 +108,7 @@ function signOut() {
                 </div>
                 <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
             </div>
-            <a href="#" class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+            <a @click="resetPassword" href="#" class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Forgot Password?</a>
         </div>
         <nuxt-link href="#" @click="signUp">
         <button v-if="spinnerHidden" type="submit"
