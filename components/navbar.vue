@@ -26,7 +26,7 @@ console.log(user.value)
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
  
-        <button @click="() => navBarHidden = !navBarHidden"
+        <button v-if="user" @click="() => navBarHidden = !navBarHidden"
       data-collapse-toggle="navbar-sticky"
       type="button"
       class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -38,7 +38,7 @@ console.log(user.value)
           </svg>
       </button>
     </div>
-    <div :class="{ 'hidden md:flex': navBarHidden }" class="items-center justify-between w-full md:w-auto md:order-1"
+    <div v-if="user" :class="{ 'hidden md:flex': navBarHidden }" class="items-center justify-between w-full md:w-auto md:order-1"
       id="navbar-sticky"
     >
       <ul class="flex flex-col gap-5 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
