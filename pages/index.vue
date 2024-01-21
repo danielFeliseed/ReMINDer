@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 
 
@@ -10,21 +10,24 @@ const supabase = useSupabaseClient()
 let editedToastHidden = ref(true);
 let spinnerHidden = ref(true);
 
+watch(user, (newValue, oldValue) => {
+    if (newValue) {
+        // User is logged in
+        window.location.href = '/home';
+    } else {
+        // User is not logged in or the login failed
+        alert('User does not exist, please sign up');
+    }
+});
 
-async function signIn() {
-  spinnerHidden.value = false
-  const {data, error } = await supabase.auth.signInWithPassword({
-    email: email.value,
-    password: password.value
-  })
-  if (!user.value) {
-    window.location.href = '/'
-    alert('User does not exist, please sign up')
-  } else {
-  
-  window.location.href = '/home'
-  }
-  spinnerHidden.value = true
+ // Why is my sign in form still on screen for a second after reditecting to home?
+ async function signIn() {
+    spinnerHidden.value = false;
+    await supabase.auth.signInWithPassword({
+        email: email.value,
+        password: password.value
+    });
+    spinnerHidden.value = true;
 }
 
 async function resetPassword() {
