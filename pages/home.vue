@@ -26,11 +26,12 @@ async function addDiary() {
     if (error) {
       console.log(error)
     } else {
+      document.activeElement.blur();
       diaries.value.push(data)
       newDiary.value = ''
       toastHidden.value = !toastHidden.value
       getDiaries()
-      document.activeElement.blur();
+      
     }
   }
 }
