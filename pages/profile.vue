@@ -65,11 +65,11 @@ console.log(user)
   </transition>
 
     <div class="app-container flex justify-center">
-        <form class="w-3/4">
+        <form class="">
             <div class="mt-[150px] grid gap-6 mb-6 md:grid-cols-2">
 
             </div>
-            <div class="container">
+            <div class="container md:w-[700px]">
             <h1 class="text-2xl font-bold mb-10 text-black text-center">You can change your password below</h1>
            
 
@@ -111,7 +111,6 @@ console.log(user)
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: #ffffff;
   padding: 2rem;
   border-radius: 1rem;
