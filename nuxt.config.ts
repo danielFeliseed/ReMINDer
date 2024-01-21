@@ -1,5 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  head: {
+    title: 'ReMINDer',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+  },
+    
   modules: ['@nuxtjs/supabase','@samk-dev/nuxt-vcalendar'],
   css: ['~/assets/css/main.css'],
   supabase: {
@@ -13,3 +21,4 @@ export default defineNuxtConfig({
     },
   },
 })
+
