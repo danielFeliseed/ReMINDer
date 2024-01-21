@@ -28,6 +28,7 @@ async function addDiary() {
     } else {
       diaries.value.push(data)
       newDiary.value = ''
+      window.scrollTo(0, 0)
       toastHidden.value = !toastHidden.value
       getDiaries()
       
