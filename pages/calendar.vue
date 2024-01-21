@@ -287,7 +287,6 @@ console.log(diaries.value)
   padding: 2rem;
   margin-right: 2rem;
   margin-left: 2rem;
-  width: 90%;
   border-radius: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
