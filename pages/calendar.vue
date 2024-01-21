@@ -167,7 +167,7 @@ console.log(diaries.value)
     </div>
   </transition>
 
-  <div class="app-container flex flex-col items-center min-h-screen overflow-scroll">
+  <div class="app-container flex flex-col items-center min-h-screen">
 
     <div class="calendar-container">
       <h1 class="title font-bold text-2xl text-blue-700 mb-3 text-center">Look back at previous entries</h1>
@@ -176,7 +176,7 @@ console.log(diaries.value)
     <VDatePicker class="date-picker" style="height: 300px; width: 350px;" value="selectedDate" @update:modelValue="onDateSelect"
       :attributes="attrs" />
     </div>
-    <div class="flex items-start gap-2.5 mt-2" v-for="(diary, index) in diaries">
+    <div class="flex items-start gap-2.5 mt-2 diary-entries-container" v-for="(diary, index) in diaries">
       <div class="flex">
         <div
           class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-white rounded-e-xl rounded-es-xl dark:bg-gray-700 shadow-xl ml-7">
@@ -288,6 +288,11 @@ console.log(diaries.value)
   margin-left: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.diary-entries-container {
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .title {
