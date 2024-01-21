@@ -200,7 +200,7 @@ console.log(diaries.value)
       </div>
 
       <div v-show="showAria[index]" id="dropdownDots"
-        class=" z-10  bg-gray-100 divide-y divide-gray-100 rounded-lg shadow w-30 dark:bg-gray-700 dark:divide-gray-600">
+        class=" z-10 absolute right-0 bg-gray-100 divide-y divide-gray-100 rounded-lg shadow w-30 dark:bg-gray-700 dark:divide-gray-600">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
           <li>
             <button @click="openModal(diary)">
