@@ -30,6 +30,7 @@ async function addDiary() {
       newDiary.value = ''
       toastHidden.value = !toastHidden.value
       getDiaries()
+      document.activeElement.blur();
     }
   }
 }
