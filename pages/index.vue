@@ -22,6 +22,10 @@ async function signIn() {
   }
 }
 
+const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+  redirectTo: 'https://nuxt-diary.vercel.app/profile',
+})
+
 
 
 

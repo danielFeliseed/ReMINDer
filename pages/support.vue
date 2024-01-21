@@ -21,7 +21,7 @@ function toggleModal() {
 </button>
 
 <!-- Main modal -->
-<div v-show="!ariaHidden" id="default-modal" tabindex="-1" class=" mt-[250px] overflow-y-auto overflow-x-hidden fixed z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div v-show="!ariaHidden" id="default-modal" tabindex="-1" class=" mt-[150px] overflow-y-auto overflow-x-hidden fixed z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-2xl max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
