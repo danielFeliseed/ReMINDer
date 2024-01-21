@@ -16,6 +16,13 @@ async function signUp() {
     email: email.value,
     password: password.value
   })
+  if(error) {
+    console.error('Error signing up:', error)
+    alert('Error signing up, please try again')
+  } else {
+    alert('Please check your inbox for a confirmation email')
+  }
+  spinnerHidden.value = true
   
 }
 
