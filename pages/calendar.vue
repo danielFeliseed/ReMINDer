@@ -272,15 +272,13 @@ console.log(diaries.value)
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background: linear-gradient(120deg, #ffffff 0%, #ffffff 100%);
   overflow-y: auto;
 }
 
 .calendar-container {
   display: flex;
-  position: relative;
-  margin-top: 150px;
+  margin-top: 100px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
