@@ -169,7 +169,7 @@ console.log(diaries.value)
 
   <div class="app-container flex flex-col items-center min-h-screen">
 
-    <div class="calendar-container">
+    <div class="calendar-container overflow-scroll">
       <h1 class="title font-bold text-2xl text-blue-700 mb-3 text-center">Look back at previous entries</h1>
     
 
