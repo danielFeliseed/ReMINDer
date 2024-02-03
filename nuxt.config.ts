@@ -7,6 +7,10 @@ export default defineNuxtConfig({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
   },
+
+  app: {
+    pageTransition: { name: 'page', mode: 'slide' },
+  },
     
   modules: ['@nuxtjs/supabase','@samk-dev/nuxt-vcalendar'],
   css: ['~/assets/css/main.css'],

@@ -169,12 +169,13 @@ button.bg-blue-500.hover\:bg-blue-700.text-white.font-bold.py-2.px-4.rounded {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .5s;
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
 }
-
-.fade-enter,
-.fade-leave-to {
+.page-enter-from,
+.page-leave-to {
   opacity: 0;
-}</style>
+  filter: blur(1rem);
+}
+</style>
