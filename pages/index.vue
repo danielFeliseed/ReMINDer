@@ -68,7 +68,9 @@ async function signOut() {
 
 
 
+
 <template>
+  <NuxtLoadingIndicator />
   <div class="app-container flex flex-col items-center justify-center space-y-4 mt-[200px]">
 
 <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">

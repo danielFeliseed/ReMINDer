@@ -37,6 +37,7 @@ console.log(user)
 </script>
 
 <template>
+  <NuxtLoadingIndicator />
 
 <transition name="fade">
     <div v-show="!editedToastHidden" id="toast-danger" position="sticky"
