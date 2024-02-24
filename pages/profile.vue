@@ -114,7 +114,7 @@ console.log(user)
 
  
   height: 100vh;
-  background: linear-gradient(120deg, #fefefe 0%, #ffffff 100%);
+  background-color: #060606;
 }
 
 .container {
@@ -137,7 +137,7 @@ console.log(user)
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
-    background: #050505;
+    background: #000000;
   }
 }
 
