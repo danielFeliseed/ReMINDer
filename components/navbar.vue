@@ -17,13 +17,13 @@ console.log(user.value)
 
 <template>
 
-<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 shadow-md">
+<nav class=" bg-slate-800  fixed w-full z-20 top-0 start-0 border-b border-gray-600 shadow-xl">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a v-if="user" href="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="header-text self-center text-2xl font-semibold whitespace-nowrap ">ReMINDer</span>
+        <span class="header-text text-gray-200 hover:text-black self-center text-2xl font-semibold whitespace-nowrap ">CodeLogger</span>
     </a>
     <a v-if="!user" href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="header-text self-center text-2xl font-semibold whitespace-nowrap ">ReMINDer</span>
+        <span class="header-text self-center text-gray-200 hover:text-black text-2xl font-semibold whitespace-nowrap ">CodeLogger</span>
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
  
@@ -42,34 +42,34 @@ console.log(user.value)
     <div v-if="user" :class="{ 'hidden md:flex': navBarHidden }" class="items-center justify-between w-full md:w-auto md:order-1"
       id="navbar-sticky"
     >
-      <ul class="flex flex-col gap-5 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <ul class="flex flex-col gap-5 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  ">
         <li v-if="!user">
-          <nuxt-link to="/" @click="navBarHidden = true">Home</nuxt-link>
+          <nuxt-link to="/" @click="navBarHidden = true">Card Creator</nuxt-link>
         </li>
         <li v-if="user">
-            <nuxt-link to="/home" @click="navBarHidden = true">Home</nuxt-link>
+            <nuxt-link to="/home" class="hover:text-black text-gray-200" @click="navBarHidden = true">Card Creator</nuxt-link>
             
         </li>
         <li v-if="!user">
-            <nuxt-link to="/" @click="navBarHidden = true">Calendar</nuxt-link>
+            <nuxt-link to="/" @click="navBarHidden = true">Decks</nuxt-link>
         </li>
         <li v-if="user">
-          <nuxt-link to="/calendar" @click="navBarHidden = true">Calendar</nuxt-link>
+          <nuxt-link to="/decks" class="hover:text-black text-gray-200" @click="navBarHidden = true">Decks</nuxt-link>
         </li>
         <li v-if="!user">
             <nuxt-link to="/" @click="navBarHidden = true">Help</nuxt-link>
         </li>
         <li v-if="user">
-            <nuxt-link to="/support" @click="navBarHidden = true">Help</nuxt-link>
+            <nuxt-link to="/support" class="hover:text-black text-gray-200" @click="navBarHidden = true">Help</nuxt-link>
         </li>
         <li v-if="!user">
             <nuxt-link to="/" @click="navBarHidden = true">Profile</nuxt-link>
         </li>
         <li v-if="user">
-            <nuxt-link to="/profile" @click="navBarHidden = true">Profile</nuxt-link>
+            <nuxt-link to="/profile" class="hover:text-black text-gray-200" @click="navBarHidden = true">Profile</nuxt-link>
         </li>
         <li>
-          <div v-if="user">
+          <div v-if="user" class="hover:text-black text-gray-200">
             Welcome back {{ user?.email  }}
           </div>
           <div v-else>
@@ -100,12 +100,12 @@ console.log(user.value)
 }
 
 .button {
-  padding: 0.5rem 0.8rem;
+  padding: 0.2rem 0.6rem;
   border: none;
   border-radius: 0.5rem;
-  background: #1c39dd;
+  background: #000731;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   cursor: pointer;
   transition: background 0.3s;
   &:hover {
@@ -113,13 +113,4 @@ console.log(user.value)
   }
 }
 
-.header-text {
-  color: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.025em;
-  line-height: 1.5;
-  
-}
 </style>

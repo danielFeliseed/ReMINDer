@@ -1,6 +1,7 @@
 <template>
     <div>
         <Navbar />
+        <NuxtLoadingIndicator />
       <slot />
     </div>
   </template>
@@ -13,7 +14,6 @@ import Navbar from '@/components/navbar.vue'
 </script>
 
 <style lang="scss" scoped>
-
 
 
 

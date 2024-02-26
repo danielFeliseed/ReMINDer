@@ -109,7 +109,7 @@ function toggleModal() {
 .app-container {
 
   height: 100vh;
-  background: linear-gradient(120deg, #ffffff 0%, #fafbfc 100%);
+  background-color: #000000;
 }
 
 .button {
