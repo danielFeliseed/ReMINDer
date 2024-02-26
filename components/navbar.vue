@@ -4,6 +4,7 @@ import { ref } from 'vue'
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 let navBarHidden = ref(true)
+// check database later
 
 async function signOut() {
   const { data, error } = await supabase.auth.signOut({
@@ -87,6 +88,7 @@ console.log(user.value)
     </div>
     </div>
   </nav>
+  
   
 </template>
 
